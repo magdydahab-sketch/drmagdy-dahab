@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أ.د. مجدي دهب | أستاذ المخ والأعصاب</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: '#0f172a',
+                        gold: '#facc15',
+                    },
+                    animation: {
+                        'breathing': 'breathing 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        breathing: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0f172a;
+            color: white;
+            background-image: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%), 
+                              url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased scroll-smooth transition-all duration-300">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card border-b border-gray-700 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-brain text-gold text-3xl"></i>
+                    <span class="font-bold text-2xl tracking-wider text-white" id="logo-text">أ.د. مجدي دهب</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 space-x-reverse rtl-space">
+                        <a href="#home" class="hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_home">الرئيسية</a>
+                        <a href="#videos" class="hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_videos">مكتبة الفيديوهات</a>
+                        <a href="#articles" class="hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_articles">المقالات والكتب</a>
+                        <a href="#contact" class="hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_contact">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="lang-toggle" onclick="toggleLanguage()" class="bg-gray-800 hover:bg-gray-700 text-white px-3 py-1 rounded border border-gray-600 transition-colors text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="lang-label">English</span>
+                    </button>
+                    <a href="#contact" class="bg-gold hover:bg-yellow-500 text-navy px-6 py-2 rounded-lg font-bold transition-all transform hover:scale-105" data-i18n="btn_consult">احجز استشارتك</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Video Ad (Bottom Left) -->
+    <div id="floating-ad" class="fixed bottom-6 left-6 w-48 rounded-xl shadow-2xl overflow-hidden z-50 border-2 border-gold bg-navy transition-all duration-500 hover:scale-105">
+        <button onclick="document.getElementById('floating-ad').style.display='none'" class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-6 h-6 flex items-center justify-center z-10 text-xs font-bold cursor-pointer transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- هذا هو الفيديو الخاص بك -->
+        <video autoplay loop muted playsinline class="w-full h-auto object-cover">
+            <source src="gemini_generated_video_ecc4b32c.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+
+    <!-- Hero Section (صورة الدكتور) -->
+    <section id="home" class="pt-20 w-full bg-navy relative border-b border-gray-800">
+        <div class="w-full h-[70vh] overflow-hidden flex justify-center items-center bg-black">
+            <!-- هذه هي الصورة الخاصة بك مع تأثير الحركة -->
+            <img src="Gemini_Generated_Image_9fyhvx9fyhvx9fyh.jpg" alt="أ.د. مجدي دهب" class="w-full h-full object-contain animate-breathing">
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-6 bg-gray-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center flex justify-center gap-6 text-2xl">
+            <a href="https://www.youtube.com/@DrMagdyDahab" target="_blank" class="text-gray-400 hover:text-red-600 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/dr.magdy.dahb/" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/dr.magdy_dahab/" target="_blank" class="text-gray-400 hover:text-pink-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/Magdydahab" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/magdy-dahab-081b4559/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gold mb-4" data-i18n="section_videos_title">مكتبة الفيديوهات</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="section_videos_desc">أحدث اللقاءات التلفزيونية والحلقات الطبية لنشر الوعي الصحي.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300">
+                    <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/TzTKXAz97DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2">نصائح نستخدمها في فصل الشتاء</h3>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300">
+                    <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/tRrzB21eVHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2">اضطرابات النوم - الجزء الأول</h3>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300">
+                    <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/ssDFIgBRfko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2">دليلك الشامل لأنواع الصداع</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="https://www.youtube.com/@DrMagdyDahab" target="_blank" class="inline-block bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy px-8 py-3 rounded-lg font-bold transition-all" data-i18n="btn_more_videos">شاهد المزيد على يوتيوب</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gold mb-6" data-i18n="section_contact_title">لحجز الاستشارة</h2>
+            <p class="text-gray-300 mb-12 text-lg" data-i18n="section_contact_desc">يسعدنا تواصلكم لتحديد موعد كشف أو لطلب استشارة طبية متخصصة. يرجى الاتصال عبر الأرقام التالية:</p>
+            
+            <!-- أرقام الهواتف منسقة لكي لا تنقسم لسطرين أبداً -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-colors">
+                    <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <!-- dir="ltr" and whitespace-nowrap force the number to stay in one line -->
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
+                        +20 11 4700 6022
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-colors">
+                    <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
+                        +20 10 0514 0009
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-colors">
+                    <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
+                        +20 122 446 1433
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p data-i18n="footer_text">جميع الحقوق محفوظة © أ.د. مجدي دهب 2026</p>
+    </footer>
+
+    <!-- سكربت الترجمة وتغيير الاتجاه -->
+    <script>
+        const translations = {
+            ar: {
+                nav_home: "الرئيسية",
+                nav_videos: "مكتبة الفيديوهات",
+                nav_articles: "المقالات والكتب",
+                nav_contact: "تواصل معنا",
+                btn_consult: "احجز استشارتك",
+                section_videos_title: "مكتبة الفيديوهات",
+                section_videos_desc: "أحدث اللقاءات التلفزيونية والحلقات الطبية لنشر الوعي الصحي.",
+                btn_more_videos: "شاهد المزيد على يوتيوب",
+                section_contact_title: "لحجز الاستشارة",
+                section_contact_desc: "يسعدنا تواصلكم لتحديد موعد كشف أو لطلب استشارة طبية متخصصة. يرجى الاتصال عبر الأرقام التالية:",
+                footer_text: "جميع الحقوق محفوظة © أ.د. مجدي دهب 2026",
+                lang_toggle_text: "English"
+            },
+            en: {
+                nav_home: "Home",
+                nav_videos: "Video Library",
+                nav_articles: "Articles & Books",
+                nav_contact: "Contact Us",
+                btn_consult: "Book Consultation",
+                section_videos_title: "Video Library",
+                section_videos_desc: "Latest TV interviews and medical episodes to spread health awareness.",
+                btn_more_videos: "Watch more on YouTube",
+                section_contact_title: "Book a Consultation",
+                section_contact_desc: "We are happy to contact you to schedule an appointment or request a specialized medical consultation. Please call the following numbers:",
+                footer_text: "All rights reserved © Prof. Dr. Magdy Dahab 2026",
+                lang_toggle_text: "عربي"
+            }
+        };
+
+        let currentLang = localStorage.getItem('websiteLang') || 'ar';
+
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.getElementById('lang-label').textContent = translations[lang].lang_toggle_text;
+
+            // Fix margin spaces for navbar links based on direction
+            const navLinks = document.querySelector('.rtl-space');
+            if(lang === 'ar') {
+                navLinks.classList.add('space-x-reverse');
+            } else {
+                navLinks.classList.remove('space-x-reverse');
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('websiteLang', currentLang);
+            applyLanguage(currentLang);
+        }
+
+        // Apply on load
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>
