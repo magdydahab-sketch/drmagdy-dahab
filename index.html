@@ -255,11 +255,11 @@
 
     <!-- سكربت جلب الفيديوهات أوتوماتيكياً من اليوتيوب -->
     <script>
-        // --------- تنبيه: ضع معرّف القناة (Channel ID) الخاص بك هنا ---------
-        const channelId = 'حط_معرف_قناتك_هنا'; 
+        // --------- تم إضافة معرّف القناة الخاص بك هنا ---------
+        const channelId = 'UCYevDQS6URgSqbmgOM8lQ'; 
         // --------------------------------------------------------------------
 
-        if(channelId !== 'حط_معرف_قناتك_هنا') {
+        if(channelId) {
             const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
 
