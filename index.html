@@ -49,21 +49,6 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        /* تأثير التحميل (Loading Spinner) */
-        .loader {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-left-color: #facc15;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body class="antialiased scroll-smooth transition-all duration-300">
@@ -134,14 +119,57 @@
                 <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="section_videos_desc">أحدث اللقاءات التلفزيونية والحلقات الطبية لنشر الوعي الصحي.</p>
             </div>
             
-            <!-- شبكة الفيديوهات الديناميكية -->
-            <!-- سيتم تفريغ هذا القسم وملئه أوتوماتيكياً بواسطة جافا سكريبت -->
+            <!-- شبكة الفيديوهات الثابتة -->
             <div id="youtube-videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- علامة التحميل تظهر للمستخدم حتى يتم جلب الفيديوهات -->
-                <div class="col-span-full text-center py-10">
-                    <div class="loader mb-4"></div>
-                    <p class="text-gray-400">جاري تحميل أحدث الفيديوهات...</p>
+                
+                <!-- Video 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/TzTKXAz97DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">نصائح نستخدمها في فصل الشتاء</h3>
+                    </div>
                 </div>
+
+                <!-- Video 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Ltn_C2t0LkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">دليلك الشامل لفوائد العلاج الطبيعي وهل يغني عن الجراحة؟ | برشامة من دهب</h3>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/tRrzB21eVHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">اضطرابات النوم - الجزء الأول | برشامة من دهب</h3>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/ssDFIgBRfko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">دليلك الشامل لأنواع الصداع | برشامة من دهب</h3>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/9lX1P_xK2Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">أسباب الدوخة والدوار المستمر | برشامة من دهب</h3>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Xq_k-W3QcRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">التهاب الأعصاب الطرفية: الأسباب والأعراض | برشامة من دهب</h3>
+                    </div>
+                </div>
+
             </div>
             
             <div class="text-center mt-10">
@@ -253,59 +281,6 @@
         }
 
         applyLanguage(currentLang);
-    </script>
-
-    <!-- سكربت جلب أحدث 6 فيديوهات أوتوماتيكياً (باستخدام RSS2JSON API) -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // معرّف القناة الخاص بك
-            const channelId = 'UCYevDQS6URgSqbmgOM8lQ';
-            
-            // رابط RSS الخاص بيوتيوب
-            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
-            // استخدام خدمة وسيطة لتحويل الـ RSS إلى JSON لتجنب مشاكل الـ CORS
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const grid = document.getElementById('youtube-videos-grid');
-                    grid.innerHTML = ''; // مسح علامة التحميل
-
-                    if (data.status === 'ok' && data.items.length > 0) {
-                        // جلب أحدث 6 فيديوهات
-                        const latestVideos = data.items.slice(0, 6);
-                        
-                        latestVideos.forEach(video => {
-                            // استخراج Video ID من الرابط
-                            const videoId = video.guid.split(':')[2] || video.link.split('v=')[1];
-                            const title = video.title;
-
-                            const videoElement = `
-                                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
-                                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/${videoId}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="p-6 flex-grow flex flex-col justify-between">
-                                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">${title}</h3>
-                                        <a href="${video.link}" target="_blank" class="text-sm text-gold hover:text-yellow-400 mt-2 block"><i class="fa-brands fa-youtube mr-1"></i> مشاهدة على يوتيوب</a>
-                                    </div>
-                                </div>
-                            `;
-                            grid.innerHTML += videoElement;
-                        });
-                    } else {
-                        grid.innerHTML = '<div class="col-span-full text-center py-10"><p class="text-red-400">عذراً، لم نتمكن من تحميل الفيديوهات في الوقت الحالي.</p></div>';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching videos:', error);
-                    document.getElementById('youtube-videos-grid').innerHTML = '<div class="col-span-full text-center py-10"><p class="text-red-400">حدث خطأ أثناء الاتصال بالخادم. يرجى المحاولة لاحقاً.</p></div>';
-                });
-        });
     </script>
 </body>
 </html>
