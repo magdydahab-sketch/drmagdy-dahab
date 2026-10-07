@@ -49,19 +49,6 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .loader {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-left-color: #facc15;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body class="antialiased scroll-smooth transition-all duration-300">
@@ -98,7 +85,6 @@
         <button onclick="document.getElementById('floating-ad').style.display='none'" class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-6 h-6 flex items-center justify-center z-10 text-xs font-bold cursor-pointer transition-colors">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <!-- هذا هو الفيديو الخاص بك -->
         <video autoplay loop muted playsinline class="w-full h-auto object-cover">
             <source src="gemini_generated_video_ecc4b32c.mp4" type="video/mp4">
             متصفحك لا يدعم تشغيل الفيديو.
@@ -131,12 +117,44 @@
                 <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="section_videos_desc">أحدث اللقاءات التلفزيونية والحلقات الطبية لنشر الوعي الصحي.</p>
             </div>
             
-            <!-- شبكة الفيديوهات (سيتم ملؤها أوتوماتيكياً بواسطة الجافاسكريبت) -->
+            <!-- شبكة الفيديوهات (سيتم تحديثها أوتوماتيكياً) -->
             <div id="youtube-videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- شاشة التحميل تظهر للمستخدم حتى يتم سحب الفيديوهات -->
-                <div class="col-span-full text-center py-10">
-                    <div class="loader mb-4"></div>
-                    <p class="text-gray-400">جاري تحميل أحدث الفيديوهات من يوتيوب...</p>
+                <!-- الفيديوهات الافتراضية تظهر لضمان عدم وجود فراغ -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/TzTKXAz97DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">نصائح نستخدمها في فصل الشتاء</h3>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Ltn_C2t0LkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">دليلك الشامل لفوائد العلاج الطبيعي وهل يغني عن الجراحة؟</h3>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/tRrzB21eVHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">اضطرابات النوم - الجزء الأول</h3>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/ssDFIgBRfko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">دليلك الشامل لأنواع الصداع</h3>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Xq_k-W3QcRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">التهاب الأعصاب الطرفية: الأسباب والأعراض</h3>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/dwCU7LOIYBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">علاج القولون العصبي ومتى يكون القولون هو الخطر الحقيقياً؟</h3>
+                    </div>
                 </div>
             </div>
             
@@ -146,7 +164,7 @@
         </div>
     </section>
 
-    <!-- Contact & Consultation Section -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-bold text-gold mb-6" data-i18n="section_contact_title">لحجز الاستشارة</h2>
@@ -157,25 +175,19 @@
                     <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
-                        +20 11 4700 6022
-                    </p>
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">+20 11 4700 6022</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-colors">
                     <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
-                        +20 10 0514 0009
-                    </p>
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">+20 10 0514 0009</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-gray-800 transition-colors">
                     <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg shadow-green-500/30">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">
-                        +20 122 446 1433
-                    </p>
+                    <p class="text-2xl font-bold tracking-wider text-white whitespace-nowrap" dir="ltr">+20 122 446 1433</p>
                 </div>
             </div>
         </div>
@@ -224,16 +236,13 @@
         function applyLanguage(lang) {
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
                     element.textContent = translations[lang][key];
                 }
             });
-
             document.getElementById('lang-label').textContent = translations[lang].lang_toggle_text;
-
             const navLinks = document.querySelector('.rtl-space');
             if(lang === 'ar') {
                 navLinks.classList.add('space-x-reverse');
@@ -251,64 +260,49 @@
         applyLanguage(currentLang);
     </script>
 
-    <!-- الجلب الأوتوماتيكي الشامل والمضمون لأحدث 6 فيديوهات -->
+    <!-- سكربت تحديث الفيديوهات أوتوماتيكياً بطريقة JSONP لتخطي حظر GitHub -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // معرّف القناة الصحيح
-            const channelId = 'UCYevDQS6URgSqbmgOM8lQ';
-            // رابط RSS الخاص بيوتيوب
-            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
-            // استخدام واجهة API مجانية قوية لتحويل RSS إلى JSON
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network error during fetch.');
+        function updateVideos(data) {
+            if (data && data.items && data.items.length > 0) {
+                const grid = document.getElementById('youtube-videos-grid');
+                let newHTML = '';
+                const latestVideos = data.items.slice(0, 6);
+                
+                latestVideos.forEach(video => {
+                    let videoId = '';
+                    if (video.guid && video.guid.includes(':')) {
+                        videoId = video.guid.split(':')[2];
+                    } else if (video.link && video.link.includes('v=')) {
+                        videoId = video.link.split('v=')[1].split('&')[0];
                     }
-                    return response.json();
-                })
-                .then(data => {
-                    const grid = document.getElementById('youtube-videos-grid');
-                    grid.innerHTML = ''; // مسح علامة التحميل
-
-                    if (data.status === 'ok' && data.items && data.items.length > 0) {
-                        // جلب أول 6 فيديوهات حديثة من القناة
-                        const latestVideos = data.items.slice(0, 6);
-                        
-                        latestVideos.forEach(video => {
-                            // استخراج Video ID من رابط الفيديو
-                            let videoId = '';
-                            if (video.guid && video.guid.includes(':')) {
-                                videoId = video.guid.split(':')[2];
-                            } else if (video.link && video.link.includes('v=')) {
-                                videoId = video.link.split('v=')[1].split('&')[0];
-                            }
-                            
-                            const title = video.title;
-
-                            // إنشاء الكود الخاص بكل فيديو
-                            const videoElement = `
-                                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
-                                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/${videoId}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <div class="p-6 flex-grow flex flex-col justify-between">
-                                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">${title}</h3>
-                                        <a href="${video.link}" target="_blank" class="text-sm text-gold hover:text-yellow-400 mt-2 block"><i class="fa-brands fa-youtube mr-1"></i> مشاهدة على يوتيوب</a>
-                                    </div>
+                    
+                    if(videoId) {
+                        newHTML += `
+                            <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                                <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/${videoId}" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="p-6 flex-grow flex flex-col justify-between">
+                                    <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">${video.title}</h3>
                                 </div>
-                            `;
-                            grid.innerHTML += videoElement;
-                        });
-                    } else {
-                        // رسالة في حالة عدم وجود فيديوهات في القناة
-                        grid.innerHTML = '<div class="col-span-full text-center py-10"><p class="text-red-400">لا توجد فيديوهات متاحة حالياً على القناة.</p></div>';
+                            </div>
+                        `;
                     }
-                })
-                .catch(error => {
-                    console.error('Error fetching videos:', error);
-                    // رسالة تظهر للزائر في حالة ضعف الإنترنت أو توقف الخدمة
-                    document.getElementById('youtube-videos-grid').innerHTML = '<div class="col-span-full text-center py-10"><p class="text-red-400">حدث خطأ أثناء تحميل الفيديوهات. يرجى إعادة تحميل الصفحة.</p></div>';
                 });
+                
+                if(newHTML !== '') {
+                    grid.innerHTML = newHTML;
+                }
+            }
+        }
+
+        // إنشاء طلب JSONP آمن لتخطي قيود الحماية
+        document.addEventListener("DOMContentLoaded", function() {
+            const channelId = 'UCYevDQS6URgSqbmgOM8lQ';
+            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&callback=updateVideos`;
+            
+            const script = document.createElement('script');
+            script.src = apiUrl;
+            document.body.appendChild(script);
         });
     </script>
 </body>
