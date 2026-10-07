@@ -92,10 +92,9 @@
         </video>
     </div>
 
-    <!-- Hero Section (صورة الدكتور) -->
+    <!-- Hero Section -->
     <section id="home" class="pt-20 w-full bg-navy relative border-b border-gray-800">
         <div class="w-full h-[70vh] overflow-hidden flex justify-center items-center bg-black">
-            <!-- هذه هي الصورة الخاصة بك مع تأثير الحركة -->
             <img src="Gemini_Generated_Image_9fyhvx9fyhvx9fyh.jpg" alt="أ.د. مجدي دهب" class="w-full h-full object-contain animate-breathing">
         </div>
     </section>
@@ -119,10 +118,13 @@
                 <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="section_videos_desc">أحدث اللقاءات التلفزيونية والحلقات الطبية لنشر الوعي الصحي.</p>
             </div>
             
-            <!-- شبكة الفيديوهات الثابتة -->
+            <!-- 
+                شبكة الفيديوهات: 
+                تحتوي على 6 فيديوهات أساسية لضمان عدم ظهور أي فراغات أو أخطاء.
+                الاسكربت في الأسفل سيقوم أوتوماتيكياً بجلب أحدث 6 فيديوهات من القناة واستبدال هذه الفيديوهات بها.
+            -->
             <div id="youtube-videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Video 1 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
                     <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/TzTKXAz97DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
@@ -130,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- Video 2 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
                     <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Ltn_C2t0LkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
@@ -138,7 +139,6 @@
                     </div>
                 </div>
 
-                <!-- Video 3 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
                     <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/tRrzB21eVHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
@@ -146,7 +146,6 @@
                     </div>
                 </div>
 
-                <!-- Video 4 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
                     <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/ssDFIgBRfko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
@@ -154,7 +153,6 @@
                     </div>
                 </div>
 
-                <!-- Video 5 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
                     <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/9lX1P_xK2Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
@@ -162,11 +160,10 @@
                     </div>
                 </div>
 
-                <!-- Video 6 -->
                 <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
-                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/Xq_k-W3QcRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/dwCU7LOIYBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="p-6 flex-grow flex flex-col justify-between">
-                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">التهاب الأعصاب الطرفية: الأسباب والأعراض | برشامة من دهب</h3>
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">علاج القولون العصبي ومتى يكون القولون هو الخطر الحقيقياً؟</h3>
                     </div>
                 </div>
 
@@ -281,6 +278,61 @@
         }
 
         applyLanguage(currentLang);
+    </script>
+
+    <!-- الكود الجديد لجلب أحدث الفيديوهات أوتوماتيكياً بطريقة آمنة ومضمونة -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const channelId = 'UCYevDQS6URgSqbmgOM8lQ';
+            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+            // استخدام AllOrigins كبروكسي آمن لتخطي قيود الحظر وجلب البيانات
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+
+            fetch(proxyUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network error');
+                    return response.json();
+                })
+                .then(data => {
+                    if (!data.contents) throw new Error('No contents');
+                    
+                    // تحويل البيانات المستلمة إلى كود يمكن قراءته
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+                    const entries = xmlDoc.querySelectorAll('entry');
+                    
+                    if (entries.length > 0) {
+                        const grid = document.getElementById('youtube-videos-grid');
+                        let newHTML = '';
+                        
+                        // ناخذ أحدث 6 فيديوهات نزلت على القناة
+                        const latestVideos = Array.from(entries).slice(0, 6);
+                        
+                        latestVideos.forEach(entry => {
+                            // استخراج كود الفيديو والعنوان بدقة
+                            const idTag = entry.querySelector('id').textContent;
+                            const videoId = idTag.split(':').pop();
+                            const title = entry.querySelector('title').textContent;
+
+                            newHTML += `
+                                <div class="glass-card rounded-2xl overflow-hidden hover:border-gold transition-colors duration-300 flex flex-col h-full">
+                                    <iframe class="w-full aspect-video flex-shrink-0" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="p-6 flex-grow flex flex-col justify-between">
+                                        <h3 class="font-bold text-lg mb-2 line-clamp-2" dir="auto">${title}</h3>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        // استبدال الـ 6 فيديوهات الأساسية بأحدث 6 فيديوهات من القناة
+                        grid.innerHTML = newHTML;
+                    }
+                })
+                .catch(error => {
+                    // في حالة حدوث أي مشكلة في الاتصال، الكود لن يفعل شيء وسيترك الفيديوهات الأساسية ظاهرة، ولن تظهر أي رسالة خطأ للزائر.
+                    console.log('Automated fetch skipped, keeping fallback videos.', error);
+                });
+        });
     </script>
 </body>
 </html>
